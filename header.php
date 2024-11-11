@@ -10,7 +10,7 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class('bg-white text-helpcompGray antialiased flex flex-col min-h-screen antialiased'); ?>>
+<body <?php body_class('bg-white text-helpcompGray font-light antialiased flex flex-col min-h-screen antialiased'); ?>>
 
 
 

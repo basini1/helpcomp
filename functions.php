@@ -72,16 +72,8 @@ function helpcomp_asset($path)
     return add_query_arg('time', time(),  get_stylesheet_directory_uri() . '/' . $path);
 }
 
-/**
- * Adds option 'li_class' to 'wp_nav_menu'.
- *
- * @param string  $classes String of classes.
- * @param mixed   $item The current item.
- * @param WP_Term $args Holds the nav menu arguments.
- *
- * @return array
- */
-function helpcomp_nav_menu_add_li_class($classes, $item, $args, $depth)
+// Adds option 'li_class' to 'wp_nav_menu'
+function tailpress_nav_menu_add_li_class($classes, $item, $args, $depth)
 {
     if (isset($args->li_class)) {
         $classes[] = $args->li_class;
@@ -93,19 +85,29 @@ function helpcomp_nav_menu_add_li_class($classes, $item, $args, $depth)
 
     return $classes;
 }
+add_filter('nav_menu_css_class', 'tailpress_nav_menu_add_li_class', 10, 4);
 
-add_filter('nav_menu_css_class', 'helpcomp_nav_menu_add_li_class', 10, 4);
+function tailpress_nav_menu_link_attributes($atts, $item, $args, $depth)
+{
+    $classes = isset($atts['class']) ? explode(' ', $atts['class']) : array();
 
-/**
- * Adds option 'submenu_class' to 'wp_nav_menu'.
- *
- * @param string  $classes String of classes.
- * @param mixed   $item The current item.
- * @param WP_Term $args Holds the nav menu arguments.
- *
- * @return array
- */
-function helpcomp_nav_menu_add_submenu_class($classes, $args, $depth)
+    if (isset($args->link_class)) {
+        $classes[] = $args->link_class;
+    }
+
+    if (isset($args->{"link_class_$depth"})) {
+        $classes[] = $args->{"link_class_$depth"};
+    }
+
+    $atts['class'] = implode(' ', $classes);
+
+    return $atts;
+}
+
+add_filter('nav_menu_link_attributes', 'tailpress_nav_menu_link_attributes', 10, 4);
+
+// Adds option 'submenu_class' to 'wp_nav_menu'
+function tailpress_nav_menu_add_submenu_class($classes, $args, $depth)
 {
     if (isset($args->submenu_class)) {
         $classes[] = $args->submenu_class;
@@ -117,5 +119,4 @@ function helpcomp_nav_menu_add_submenu_class($classes, $args, $depth)
 
     return $classes;
 }
-
-add_filter('nav_menu_submenu_css_class', 'helpcomp_nav_menu_add_submenu_class', 10, 3);
+add_filter('nav_menu_submenu_css_class', 'tailpress_nav_menu_add_submenu_class', 10, 3);

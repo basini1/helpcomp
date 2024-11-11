@@ -62,6 +62,9 @@
 .relative {
     position: relative
 }
+.sticky {
+    position: sticky
+}
 .bottom-0 {
     bottom: 0px
 }
@@ -80,11 +83,20 @@
 .top-full {
     top: 100%
 }
+.top-4 {
+    top: 1rem
+}
 .z-10 {
     z-index: 10
 }
 .col-span-1 {
     grid-column: span 1 / span 1
+}
+.col-span-3 {
+    grid-column: span 3 / span 3
+}
+.col-span-6 {
+    grid-column: span 6 / span 6
 }
 .m-8 {
     margin: 2rem
@@ -131,6 +143,9 @@
 .mb-4 {
     margin-bottom: 1rem
 }
+.mb-6 {
+    margin-bottom: 1.5rem
+}
 .mb-8 {
     margin-bottom: 2rem
 }
@@ -142,6 +157,36 @@
 }
 .mt-5 {
     margin-top: 1.25rem
+}
+.mt-auto {
+    margin-top: auto
+}
+.-mt-12 {
+    margin-top: -3rem
+}
+.mt-\[61px\] {
+    margin-top: 61px
+}
+.mt-\[60px\] {
+    margin-top: 60px
+}
+.mt-12 {
+    margin-top: 3rem
+}
+.-mt-8 {
+    margin-top: -2rem
+}
+.mb-10 {
+    margin-bottom: 2.5rem
+}
+.mt-8 {
+    margin-top: 2rem
+}
+.mt-4 {
+    margin-top: 1rem
+}
+.mt-6 {
+    margin-top: 1.5rem
 }
 .block {
     display: block
@@ -169,6 +214,15 @@
 }
 .h-6 {
     height: 1.5rem
+}
+.h-auto {
+    height: auto
+}
+.h-12 {
+    height: 3rem
+}
+.h-10 {
+    height: 2.5rem
 }
 .max-h-\[65rem\] {
     max-height: 65rem
@@ -200,11 +254,26 @@
 .w-full {
     width: 100%
 }
+.w-12 {
+    width: 3rem
+}
+.w-10 {
+    width: 2.5rem
+}
+.max-w-60 {
+    max-width: 15rem
+}
 .max-w-\[17\.5rem\] {
     max-width: 17.5rem
 }
 .max-w-\[23rem\] {
     max-width: 23rem
+}
+.max-w-\[97rem\] {
+    max-width: 97rem
+}
+.max-w-full {
+    max-width: 100%
 }
 .max-w-sm {
     max-width: 24rem
@@ -212,8 +281,35 @@
 .shrink-0 {
     flex-shrink: 0
 }
+.grow {
+    flex-grow: 1
+}
 .-translate-y-1\/2 {
     --tw-translate-y: -50%;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+}
+.translate-y-0 {
+    --tw-translate-y: 0px;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+}
+.translate-y-0\.5 {
+    --tw-translate-y: 0.125rem;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+}
+.-translate-y-1 {
+    --tw-translate-y: -0.25rem;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+}
+.-translate-y-1\.5 {
+    --tw-translate-y: -0.375rem;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+}
+.translate-y-1 {
+    --tw-translate-y: 0.25rem;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+}
+.translate-y-1\.5 {
+    --tw-translate-y: 0.375rem;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
 }
 .rotate-180 {
@@ -222,6 +318,28 @@
 }
 .transform {
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+}
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(-25%);
+        animation-timing-function: cubic-bezier(0.8,0,1,1)
+    }
+    50% {
+        transform: none;
+        animation-timing-function: cubic-bezier(0,0,0.2,1)
+    }
+}
+.animate-bounce {
+    animation: bounce 1s infinite
+}
+@keyframes ping {
+    75%, 100% {
+        transform: scale(2);
+        opacity: 0
+    }
+}
+.animate-ping {
+    animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite
 }
 .cursor-pointer {
     cursor: pointer
@@ -232,14 +350,35 @@
 .list-disc {
     list-style-type: disc
 }
+.grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr))
+}
+.grid-cols-12 {
+    grid-template-columns: repeat(12, minmax(0, 1fr))
+}
+.grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr))
+}
 .grid-cols-7 {
     grid-template-columns: repeat(7, minmax(0, 1fr))
+}
+.grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+}
+.grid-cols-6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr))
 }
 .flex-col {
     flex-direction: column
 }
 .flex-wrap {
     flex-wrap: wrap
+}
+.place-items-start {
+    place-items: start
+}
+.items-start {
+    align-items: flex-start
 }
 .items-center {
     align-items: center
@@ -259,8 +398,18 @@
 .gap-12 {
     gap: 3rem
 }
+.gap-2 {
+    gap: 0.5rem
+}
+.gap-4 {
+    gap: 1rem
+}
 .gap-7 {
     gap: 1.75rem
+}
+.gap-x-3 {
+    -moz-column-gap: 0.75rem;
+         column-gap: 0.75rem
 }
 .gap-x-4 {
     -moz-column-gap: 1rem;
@@ -281,8 +430,18 @@
 .gap-y-8 {
     row-gap: 2rem
 }
+.gap-x-8 {
+    -moz-column-gap: 2rem;
+         column-gap: 2rem
+}
+.self-end {
+    align-self: flex-end
+}
 .overflow-hidden {
     overflow: hidden
+}
+.overflow-x-hidden {
+    overflow-x: hidden
 }
 .rounded {
     border-radius: 0.25rem
@@ -299,16 +458,23 @@
 .border-b {
     border-bottom-width: 1px
 }
+.border-dashed {
+    border-style: dashed
+}
 .border-transparent {
     border-color: transparent
+}
+.border-helpcompRed {
+    --tw-border-opacity: 1;
+    border-color: rgb(231 48 49 / var(--tw-border-opacity))
 }
 .bg-gray-200 {
     --tw-bg-opacity: 1;
     background-color: rgb(229 231 235 / var(--tw-bg-opacity))
 }
-.bg-gray-50 {
+.bg-helpcompBlack {
     --tw-bg-opacity: 1;
-    background-color: rgb(249 250 251 / var(--tw-bg-opacity))
+    background-color: rgb(23 24 26 / var(--tw-bg-opacity))
 }
 .bg-white {
     --tw-bg-opacity: 1;
@@ -348,10 +514,6 @@
     padding-left: 2rem;
     padding-right: 2rem
 }
-.py-12 {
-    padding-top: 3rem;
-    padding-bottom: 3rem
-}
 .py-16 {
     padding-top: 4rem;
     padding-bottom: 4rem
@@ -374,6 +536,15 @@
 }
 .pb-24 {
     padding-bottom: 6rem
+}
+.pt-24 {
+    padding-top: 6rem
+}
+.pt-\[61px\] {
+    padding-top: 61px
+}
+.pt-\[60px\] {
+    padding-top: 60px
 }
 .text-center {
     text-align: center
@@ -430,19 +601,22 @@
 .uppercase {
     text-transform: uppercase
 }
+.not-italic {
+    font-style: normal
+}
 .leading-\[1\.125rem\] {
     line-height: 1.125rem
 }
 .leading-tight {
     line-height: 1.25
 }
+.text-\[\#787878\] {
+    --tw-text-opacity: 1;
+    color: rgb(120 120 120 / var(--tw-text-opacity))
+}
 .text-blue-500 {
     --tw-text-opacity: 1;
     color: rgb(59 130 246 / var(--tw-text-opacity))
-}
-.text-gray-500 {
-    --tw-text-opacity: 1;
-    color: rgb(107 114 128 / var(--tw-text-opacity))
 }
 .text-gray-700 {
     --tw-text-opacity: 1;
@@ -452,13 +626,21 @@
     --tw-text-opacity: 1;
     color: rgb(31 41 55 / var(--tw-text-opacity))
 }
-.text-white {
+.text-helpcompBlue {
     --tw-text-opacity: 1;
-    color: rgb(255 255 255 / var(--tw-text-opacity))
+    color: rgb(239 246 254 / var(--tw-text-opacity))
 }
 .text-helpcompGray {
     --tw-text-opacity: 1;
     color: rgb(114 121 128 / var(--tw-text-opacity))
+}
+.text-white {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity))
+}
+.text-helpcompRed {
+    --tw-text-opacity: 1;
+    color: rgb(231 48 49 / var(--tw-text-opacity))
 }
 .underline {
     text-decoration-line: underline
@@ -545,8 +727,80 @@ body {
 .wp-block[data-align=full] {
     max-width: 100%
 }
+.before\:absolute::before {
+    content: var(--tw-content);
+    position: absolute
+}
+.before\:left-0::before {
+    content: var(--tw-content);
+    left: 0px
+}
+.before\:right-0::before {
+    content: var(--tw-content);
+    right: 0px
+}
+.before\:top-\[-61px\]::before {
+    content: var(--tw-content);
+    top: -61px
+}
+.before\:top-0::before {
+    content: var(--tw-content);
+    top: 0px
+}
+.before\:-top-\[60px\]::before {
+    content: var(--tw-content);
+    top: -60px
+}
+.before\:h-\[61px\]::before {
+    content: var(--tw-content);
+    height: 61px
+}
+.before\:h-\[60px\]::before {
+    content: var(--tw-content);
+    height: 60px
+}
+.before\:bg-right::before {
+    content: var(--tw-content);
+    background-position: right
+}
+.before\:opacity-10::before {
+    content: var(--tw-content);
+    opacity: 0.1
+}
 .hover\:bg-transparent:hover {
     background-color: transparent
+}
+.hover\:text-helpcompGray:hover {
+    --tw-text-opacity: 1;
+    color: rgb(114 121 128 / var(--tw-text-opacity))
+}
+.hover\:text-white:hover {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity))
+}
+.focus\:text-helpcompGray:focus {
+    --tw-text-opacity: 1;
+    color: rgb(114 121 128 / var(--tw-text-opacity))
+}
+.focus\:text-white:focus {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity))
+}
+.group:hover .group-hover\:border-helpcompBlue {
+    --tw-border-opacity: 1;
+    border-color: rgb(239 246 254 / var(--tw-border-opacity))
+}
+.group:hover .group-hover\:text-white {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity))
+}
+.group:hover .group-hover\:text-helpcompBlue {
+    --tw-text-opacity: 1;
+    color: rgb(239 246 254 / var(--tw-text-opacity))
+}
+.group:hover .group-hover\:text-helpcompGray {
+    --tw-text-opacity: 1;
+    color: rgb(114 121 128 / var(--tw-text-opacity))
 }
 @media not all and (min-width: 768px) {
     .max-md\:min-h-\[calc\(90vh-5rem\)\] {
@@ -557,16 +811,45 @@ body {
     .xxs\:w-1\/2 {
         width: 50%
     }
+    .xxs\:px-5 {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem
+    }
+}
+@media (min-width: 480px) {
+    .xs\:px-6 {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem
+    }
 }
 @media (min-width: 640px) {
+    .sm\:col-span-3 {
+        grid-column: span 3 / span 3
+    }
+    .sm\:col-span-6 {
+        grid-column: span 6 / span 6
+    }
     .sm\:\!w-1\/3 {
         width: 33.333333% !important
     }
     .sm\:w-3\/4 {
         width: 75%
     }
+    .sm\:grid-cols-12 {
+        grid-template-columns: repeat(12, minmax(0, 1fr))
+    }
+    .sm\:grid-cols-6 {
+        grid-template-columns: repeat(6, minmax(0, 1fr))
+    }
+    .sm\:px-7 {
+        padding-left: 1.75rem;
+        padding-right: 1.75rem
+    }
 }
 @media (min-width: 768px) {
+    .md\:col-span-6 {
+        grid-column: span 6 / span 6
+    }
     .md\:my-6 {
         margin-top: 1.5rem;
         margin-bottom: 1.5rem
@@ -586,9 +869,16 @@ body {
     .md\:grid-cols-2 {
         grid-template-columns: repeat(2, minmax(0, 1fr))
     }
+    .md\:grid-cols-12 {
+        grid-template-columns: repeat(12, minmax(0, 1fr))
+    }
     .md\:gap-x-5 {
         -moz-column-gap: 1.25rem;
              column-gap: 1.25rem
+    }
+    .md\:px-8 {
+        padding-left: 2rem;
+        padding-right: 2rem
     }
     .md\:py-20 {
         padding-top: 5rem;
@@ -618,12 +908,19 @@ body {
     .lg\:grid-cols-3 {
         grid-template-columns: repeat(3, minmax(0, 1fr))
     }
+    .lg\:grid-cols-12 {
+        grid-template-columns: repeat(12, minmax(0, 1fr))
+    }
     .lg\:gap-8 {
         gap: 2rem
     }
     .lg\:gap-x-6 {
         -moz-column-gap: 1.5rem;
              column-gap: 1.5rem
+    }
+    .lg\:px-12 {
+        padding-left: 3rem;
+        padding-right: 3rem
     }
     .lg\:pl-8 {
         padding-left: 2rem
@@ -639,6 +936,9 @@ body {
 @media (min-width: 1280px) {
     .xl\:ml-\[8\.333\%\] {
         margin-left: 8.333%
+    }
+    .xl\:block {
+        display: block
     }
     .xl\:flex {
         display: flex
@@ -658,6 +958,12 @@ body {
     .xl\:w-5\/6 {
         width: 83.333333%
     }
+    .xl\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr))
+    }
+    .xl\:grid-cols-12 {
+        grid-template-columns: repeat(12, minmax(0, 1fr))
+    }
     .xl\:gap-x-20 {
         -moz-column-gap: 5rem;
              column-gap: 5rem
@@ -668,6 +974,10 @@ body {
     }
     .xl\:gap-y-12 {
         row-gap: 3rem
+    }
+    .xl\:px-14 {
+        padding-left: 3.5rem;
+        padding-right: 3.5rem
     }
     .xl\:pl-10 {
         padding-left: 2.5rem

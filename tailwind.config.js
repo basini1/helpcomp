@@ -18,7 +18,7 @@ module.exports = {
 			colors: {
 				// helpcompBase: "#222426",
 				helpcompBlack: "#17181A",
-				helpcompBlue: "eff6fe",
+				helpcompBlue: "#eff6fe",
 				helpcompGray: "#727980",
 				helpcompRed: "#e73031",
 			},
