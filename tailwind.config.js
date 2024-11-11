@@ -38,4 +38,5 @@ module.exports = {
 		},
 	},
 	plugins: [tailpress.tailwind],
+	safelist: ["w-4", "h-4", "xl:-left-3", "rotate-180", "max-xl:overflow-hidden", "max-xl:rotate-180"],
 };

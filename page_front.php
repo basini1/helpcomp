@@ -4,6 +4,13 @@
 
 <?php get_header(); ?>
 
+<div class="h-screen"></div>
+<div class="h-screen"></div>
+<div class="h-screen"></div>
+<div class="h-screen"></div>
+
+<?php /*
+
 <section class="pb-24 ">
     <ul class="bg-opticBlack">
         <li>
@@ -282,5 +289,7 @@
         </div>
     </div>
 </section>
+
+<?php */ ?>
 
 <?php get_footer(); ?>

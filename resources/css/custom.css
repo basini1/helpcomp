@@ -57,3 +57,58 @@ article > *:not(.entry-content),
     xl:px-14
     2xl:px-16;
 }
+
+header .wrapper {
+	@apply max-w-[104rem];
+}
+
+[data-element="submenu-toggler"] {
+	@apply absolute
+    duration-300
+    flex
+    h-8
+    items-center
+    justify-center
+    right-0
+    top-2
+    transition-transform
+    w-8
+    will-change-transform
+    xl:h-4
+    xl:-left-3
+    xl:relative
+    xl:right-auto
+    xl:top-auto
+    xl:w-4;
+}
+
+.menu-image.menu-image-title-below {
+	@apply !p-0
+    rounded-md;
+}
+
+.menu-image-title-below.menu-image-title {
+	@apply block
+    /* group-hover:text-opticBlack */
+    /* group-hover:border-opticOrange */
+    transition-colors
+    duration-500
+    /* border-transparent border-b; */;
+}
+/* 
+.xx {
+	@apply w-full flex justify-center gap-y-1 flex-wrap items-center static top-full my-[3.5rem];
+}
+
+.xx li {
+	@apply flex;
+}
+
+.xxx {
+	@apply after:bg-opticGray--extralight after:rounded-md after:h-[0.3125rem] after:flex after:w-9 after:absolute after:top-1 after:left-0 after:transition after:duration-300
+    inline-block h-3 w-[32px] mx-2 relative hover:after:bg-opticOrange;
+}
+
+.xxx.is-active {
+	@apply after:bg-opticOrange;
+} */

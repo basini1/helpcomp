@@ -27,7 +27,7 @@
 
                 <div class="flex justify-between order-0 -mt-24">
 
-                    <a class="flex" href="<?php echo get_bloginfo('url'); ?>" title="<?php echo trim(get_bloginfo('name') . ' - ' .     get_bloginfo('description')); ?>">
+                    <a class="flex max-lg:max-w-40" href="<?php echo get_bloginfo('url'); ?>" title="<?php echo trim(get_bloginfo('name') . ' - ' . get_bloginfo('description')); ?>">
                         <svg class="max-w-full h-auto" xmlns="http://www.w3.org/2000/svg" width="190.367" height="60" viewBox="0 0 190.367 60">
                             <g id="logo" transform="translate(3848.53 -6717.89)">
                                 <path id="accent" d="M-3850.53,6763.706h80.866l11.107-16.177,8.273,11.66q11.049-17.284,22.1-34.566l4.489,7.295,8.028-14.029,24.022,55.634q8.535-20.744,17.07-41.489h12.726v1.424h-11.778l-17.989,43.721-24.231-56.115-7.806,13.641-4.559-7.409-22.01,34.431-8.314-11.716-10.381,15.119h-81.612Z" transform="translate(2 0)" fill="#fff" />
