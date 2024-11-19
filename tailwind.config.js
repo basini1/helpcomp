@@ -22,6 +22,10 @@ module.exports = {
 				helpcompGray: "#727980",
 				helpcompRed: "#e73031",
 			},
+			gridTemplateColumns: {
+				// Simple 16 column grid
+				14: "repeat(14, minmax(0, 1fr))",
+			},
 		},
 		fontFamily: {
 			sans: ["Outfit, sans-serif"],
@@ -37,6 +41,6 @@ module.exports = {
 			"3xl": "1800px",
 		},
 	},
-	plugins: [tailpress.tailwind],
+	plugins: [tailpress.tailwind, require("@tailwindcss/typography"), require("@tailwindcss/forms")],
 	safelist: ["w-4", "h-4", "xl:-left-3", "rotate-180", "max-xl:overflow-hidden", "max-xl:rotate-180"],
 };

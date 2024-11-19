@@ -201,3 +201,19 @@ function my_wp_nav_menu_objects($items, $args)
 
     return $items;
 }
+
+function my_acf_block_registration()
+{
+    if (function_exists('acf_register_block_type')) {
+        acf_register_block_type(array(
+            'name' => 'hero-block',
+            'title' => __('Sekcja hero'),
+            'description' => __('Sekcja składająca się z nagłówka, tekstu oraz obrazka '),
+            'render_template' => 'template-parts/blocks/hero-block.php',
+            'category' => 'formatting',
+            'icon' => 'admin-comments',
+            'keywords' => array('hero, sekcja, główna'),
+        ));
+    }
+}
+add_action('acf/init', 'my_acf_block_registration');

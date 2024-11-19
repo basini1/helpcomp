@@ -1,17 +1,8 @@
 <div class="mb-10 relative overflow-x-hidden before:left-0 before:right-0 before:h-[60px] before:absolute pt-[60px] before:bg-right before:top-0 before:opacity-10 aaa -mt-8">
 
-    <?php
-    wp_nav_menu(
-        array(
-            'container'         => false,
-            'menu_class'        => 'flex flex-wrap gap-x-8 gap-y-1 justify-center mt-6',
-            'theme_location'    => 'footer_company-menu',
-            'li_class'          => false,
-            'link_class'        => 'block text-helpcompGray transition-colors duration-300 hover:text-white',
-            'fallback_cb'       => false,
-        )
-    );
-    ?>
+    <div class="flex flex-wrap justify-center mt-6 text-sm font-light gap-x-8 gap-y-1">
+        <p class="mb-0">&copy; <?php echo date("Y"); ?> Wszelkie prawa zastrzeżone <?php echo get_field('company_name', 'option') ? ' - ' . get_field('company_name', 'option') : null; ?></p>
+    </div>
 
 </div>
 

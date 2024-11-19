@@ -16,7 +16,7 @@
     <header class="bg-white fixed flex items-center h-28 max-lg:h-20 left-0 right-0 top-0 z-20 before:absolute before:inset-0 before:-z-[1] before:bg-white before:shadow-[0px_10px_20px_0_rgba(0,0,0,0.05)] before:opacity-0">
 
         <div class="wrapper">
-            <div class="flex items-center justify-between gap-6">
+            <div class="flex items-center justify-between gap-6 4xl:w-[calc(100%+7rem)] 4xl:-ml-14">
 
                 <?php get_template_part('template-parts/header/logo'); ?>
                 <?php get_template_part('template-parts/header/nav'); ?>
@@ -26,4 +26,4 @@
 
     </header>
 
-    <main>
+    <main class="flex flex-col gap-24 mt-28 max-lg:mt-20">

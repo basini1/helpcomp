@@ -1,7 +1,7 @@
-article > *:not(.entry-content),
+/* article > *:not(.entry-content),
 .entry-content > * {
 	@apply mx-auto max-w-content;
-}
+} */
 
 .entry-content,
 .block-editor-block-list__layout {
@@ -44,9 +44,18 @@ article > *:not(.entry-content),
 	}
 }
 
+@keyframes gradient-smooth {
+	0% {
+		background-position: 0% 50%;
+	}
+	100% {
+		background-position: 100% 50%;
+	}
+}
+
 .wrapper {
 	@apply w-full
-    max-w-[97rem]
+    max-w-[104rem]
     mx-auto
     px-4
     xxs:px-5
@@ -94,6 +103,11 @@ header .wrapper {
     transition-colors
     duration-500
     /* border-transparent border-b; */;
+}
+
+.swiper-slide:not(.swiper-slide-visible) {
+	@apply opacity-0
+    pointer-events-none;
 }
 /* 
 .xx {

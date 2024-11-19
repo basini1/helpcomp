@@ -8,24 +8,24 @@
     "color": {
       "palette": [
         {
-          "name": "Primary",
-          "slug": "primary",
-          "color": "#0EA5E9"
+          "name": "Szary",
+          "slug": "gray",
+          "color": "#727980"
         },
         {
-          "name": "Secondary",
-          "slug": "secondary",
-          "color": "#14B8A6"
+          "name": "Czerwony",
+          "slug": "red",
+          "color": "#e73031"
         },
         {
-          "name": "Dark",
-          "slug": "dark",
-          "color": "#1F2937"
+          "name": "Prawie czarny",
+          "slug": "near-black",
+          "color": "#17181A"
         },
         {
-          "name": "Light",
-          "slug": "light",
-          "color": "#F9FAFB"
+          "name": "Bardzo jasny niebieski",
+          "slug": "light-blue",
+          "color": "#eff6fe"
         }
       ]
     },
