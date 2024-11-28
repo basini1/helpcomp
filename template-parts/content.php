@@ -1,4 +1,4 @@
-<article id="post-<?php the_ID(); ?>" class="prose max-w-none">
+<article id="post-<?php the_ID(); ?>" class="pprose max-w-none">
 
     <?php
     $blocks = parse_blocks(get_the_content());

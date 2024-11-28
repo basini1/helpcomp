@@ -3,15 +3,34 @@
     <?php
     $template = get_page_template_slug();
 
-    if (!in_array($template, ['page_insert_archive.php', 'page_insert_single.php'])) {
+    if (!in_array($template, ['page_insert_archive.php', 'page_insert_single.php', 'page_contact.php'])) {
         get_template_part('template-parts/footer/cta');
     }
 
     ?>
 
-    <footer class="pt-24 mt-auto bg-helpcompBlack text-helpcompGray" role="contentinfo">
+    <footer>
+        <div class="text-gray-500 wrapper 2xl:px-20">
+            <div class="grid py-16 gap-x-4 gap-y-12 lg:grid-cols-12">
+                <div class="border-0 border-gray-200 lg:col-span-4">
+                    <?php get_template_part('template-parts/footer/contact'); ?>
+                </div>
+                <div class="lg:col-span-7 lg:col-start-6">
+                    <?php get_template_part('template-parts/footer/menu_insert'); ?>
+                </div>
+            </div>
+            <div class="text-sm text-center">
+                <?php get_template_part('template-parts/footer/copy'); ?>
+            </div>
+        </div>
+    </footer>
+
+    <?php /*
+
+    <footer class="hidden pt-24 mt-auto bg-helpcompBlack text-helpcompGray" role="contentinfo">
 
         <div class="wrapper">
+
             <div class="relative flex flex-col gap-y-12 4xl:w-[calc(100%+7rem)] 4xl:-ml-14">
 
                 <div class="sticky flex self-end justify-end translate-y-1 lg:top-4 top-24">
@@ -80,7 +99,12 @@
                 </div>
 
             </div>
+
+        </div>
+
     </footer>
+
+    */ ?>
 
     <?php wp_footer(); ?>
 

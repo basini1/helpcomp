@@ -1,13 +1,10 @@
 <?php
-/* Template Name: Frontpage */
+/* Template Name: Strona główna */
 ?>
 
 <?php get_header(); ?>
 
-<div class="h-screen"></div>
-<div class="h-screen"></div>
-<div class="h-screen"></div>
-<div class="h-screen"></div>
+<div class="h-[80vh] bg-helpcompBlueDark"></div>
 
 <?php /*
 
@@ -264,32 +261,10 @@
     </div>
 </section>
 
-<section class="py-24 -mt-24">
-    <div class="wrapper">
-        <div class="flex flex-col items-center mb-12 gap-y-8">
-            <h2 class="font-semibold text-4xl 2xl:text-5xl 3xl:text-5.5xl text-opticBlack uppercase">Nasze marki</h2>
-            <span class="font-semibold text-[0.8125rem] uppercase text-opticOrange -mt-4 block max-w-[17.5rem] text-center"><strong class="font-semibold">Wszystkie najlepsze marki w jednym miejscu</strong></span>
-        </div>
-        <div class="flex mb-12 -mx-2">
-            <div class="w-full px-2 mx-auto xl:w-5/6">
-                <ul class="grid grid-cols-7 gap-7">
-                    <?php for ($i = 0; $i < 14; $i++) : ?>
-                        <li>
-                            <div class="flex items-center justify-center p-3 rounded-md bg-opticGray--extralight aspect-[16/9]">
-                                asd
-                            </div>
-                        </li>
-                    <?php endfor; ?>
-                </ul>
-            </div>
-        </div>
-        <div class="flex justify-center max-w-[23rem] mx-auto text-center">
-            <p>Zapraszamy po komfortowe, trwałe i nowoczesne okulary, pozytywnie wpływające na jakość Państwa życia
-                i zdrowia.</p>
-        </div>
-    </div>
-</section>
+
 
 <?php */ ?>
+
+<?php the_content(); ?>
 
 <?php get_footer(); ?>

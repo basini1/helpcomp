@@ -5,7 +5,7 @@
 
             <div class="col-span-3">
 
-                <div class="3xl:-ml-14 3xl:w-[calc(100%+3.5rem)]">
+                <div class="4xl:-ml-14 3xl:w-[calc(100%+3.5rem)]">
 
                     <h1 class="mb-8 text-4xl font-extrabold 3xl:text-5xl text-helpcompBlack"><?php echo get_field('section_title'); ?></h1>
                     <h2 class="text-2xl font-bold text-helpcompBlack"><?php echo get_field('section_slogan'); ?></h2>
@@ -20,7 +20,7 @@
 
             <div class="col-span-9">
 
-                <div class="3xl:w-[calc(100%+3.5rem)]">
+                <div class="4xl:w-[calc(100%+3.5rem)]">
 
                     <?php if (get_field('section_description')) : ?>
                         <?php // echo get_field('section_description'); 

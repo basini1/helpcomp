@@ -42,6 +42,15 @@ function helpcomp_setup()
 
 add_action('after_setup_theme', 'helpcomp_setup');
 
+// GOOGLE FONTS
+add_action('wp_print_styles', 'wpb_add_google_fonts');
+function wpb_add_google_fonts()
+{
+    $theme = wp_get_theme();
+    wp_enqueue_style('google-fonts-outfit', '//fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap', false, $theme->get('Version'), 'all');
+}
+
+
 /**
  * Enqueue theme assets.
  */
@@ -51,7 +60,6 @@ function helpcomp_enqueue_scripts()
 
     wp_enqueue_style('tailpress', helpcomp_asset('css/app.css'), array(), $theme->get('Version'));
     wp_enqueue_script('tailpress', helpcomp_asset('js/app.js'), array('jquery'), $theme->get('Version'));
-    wp_enqueue_style('google-fonts-outfit', '//fonts.googleapis.com/css2?family=Outfit:wght@300,400,500;600,700,800&display=swap', false, $theme->get('Version'), 'all');
 }
 
 add_action('wp_enqueue_scripts', 'helpcomp_enqueue_scripts');
@@ -205,6 +213,7 @@ function my_wp_nav_menu_objects($items, $args)
 function my_acf_block_registration()
 {
     if (function_exists('acf_register_block_type')) {
+
         acf_register_block_type(array(
             'name' => 'hero-block',
             'title' => __('Sekcja hero'),
@@ -213,6 +222,46 @@ function my_acf_block_registration()
             'category' => 'formatting',
             'icon' => 'admin-comments',
             'keywords' => array('hero, sekcja, główna'),
+        ));
+
+        acf_register_block_type(array(
+            'name' => 'block_partner',
+            'title' => __('Rotator partnerów'),
+            'description' => __('Sekcja z logotypami partnerów'),
+            'render_template' => 'template-parts/blocks/block_partner.php',
+            'category' => 'formatting',
+            'icon' => 'admin-comments',
+            'keywords' => array('logo, slider, partnerzy'),
+        ));
+
+        acf_register_block_type(array(
+            'name' => 'block_cols',
+            'title' => __('Wiersz z kolumnami'),
+            'description' => __('Sekcja kolumnowa zwierająca zdjęcie oraz tekst'),
+            'render_template' => 'template-parts/blocks/block_cols.php',
+            'category' => 'formatting',
+            'icon' => 'admin-comments',
+            'keywords' => array('zdjęcie, tekst, kolumny'),
+        ));
+
+        acf_register_block_type(array(
+            'name' => 'block_front-page_about',
+            'title' => __('Strona główna: o nas'),
+            'description' => __('Sekcja składająca się z 3 kolumn w różych rozmiarach'),
+            'render_template' => 'template-parts/blocks/block_front-page_about.php',
+            'category' => 'formatting',
+            'icon' => 'admin-comments',
+            'keywords' => array('zdjęcie, tekst, kolumny, o nas'),
+        ));
+
+        acf_register_block_type(array(
+            'name' => 'block_front-page_experience',
+            'title' => __('Doświadczenie'),
+            'description' => __('Sekcja składająca się z 4 kolumn z liczbami i ich opisem'),
+            'render_template' => 'template-parts/blocks/block_experience.php',
+            'category' => 'formatting',
+            'icon' => 'admin-comments',
+            'keywords' => array('liczby, doświadczenie'),
         ));
     }
 }

@@ -190,7 +190,45 @@ __webpack_require__.r(__webpack_exports__);
     var swiperSingleApartmentRelated = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](container, {
       breakpoints: {
         480: {
-          slidesPerView: 2.6,
+          slidesPerView: 2.6
+        },
+        640: {
+          slidesPerView: 3.45
+        },
+        768: {
+          slidesPerView: 4.4
+        },
+        1024: {
+          slidesPerView: 5.15
+        },
+        1280: {
+          slidesPerView: 6
+        }
+      },
+      // loop: true,
+      modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Pagination],
+      navigation: {
+        nextEl: btnNext,
+        prevEl: btnPrev
+      },
+      pagination: {
+        el: pagination,
+        clickable: true
+      },
+      slidesPerView: 1.75,
+      spaceBetween: 2,
+      watchSlidesProgress: true
+    });
+  }
+  if (document.querySelector('[data-slider="slider_single-apartment_related2"]')) {
+    var _container = document.querySelector('[data-slider="single-apartment_related2_slides"]');
+    var _btnNext = document.querySelector('[data-element="single-apartment_related2_next"]');
+    var _btnPrev = document.querySelector('[data-element="single-apartment_related2_prev"]');
+    var _pagination = document.querySelector('[data-element="single-apartment_related2_pagination"]');
+    var swiperSingleApartmentRelated2 = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](_container, {
+      breakpoints: {
+        480: {
+          slidesPerView: "auto",
           spaceBetween: 16
         },
         640: {
@@ -213,15 +251,53 @@ __webpack_require__.r(__webpack_exports__);
       // loop: true,
       modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Pagination],
       navigation: {
-        nextEl: btnNext,
-        prevEl: btnPrev
+        nextEl: _btnNext,
+        prevEl: _btnPrev
       },
       pagination: {
-        el: pagination,
+        el: _pagination,
         clickable: true
       },
-      slidesPerView: 1.75,
-      spaceBetween: 12,
+      slidesPerView: "auto",
+      spaceBetween: 16,
+      watchSlidesProgress: true
+    });
+  }
+  if (document.querySelector('[data-slider="slider_partners"]')) {
+    var _container2 = document.querySelector('[data-slider="partners_slides"]');
+    var _btnNext2 = document.querySelector('[data-element="partners_next"]');
+    var _btnPrev2 = document.querySelector('[data-element="partners_prev"]');
+    var _pagination2 = document.querySelector('[data-element="partners_pagination"]');
+    var swiperLogoset = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](_container2, {
+      breakpoints: {
+        480: {
+          slidesPerView: "auto"
+        },
+        640: {
+          slidesPerView: 3.45
+        },
+        768: {
+          slidesPerView: 4.4
+        },
+        1024: {
+          slidesPerView: 5.15
+        },
+        1280: {
+          slidesPerView: 6
+        }
+      },
+      // loop: true,
+      modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Pagination],
+      navigation: {
+        nextEl: _btnNext2,
+        prevEl: _btnPrev2
+      },
+      pagination: {
+        el: _pagination2,
+        clickable: true
+      },
+      slidesPerView: "auto",
+      spaceBetween: 2,
       watchSlidesProgress: true
     });
   }

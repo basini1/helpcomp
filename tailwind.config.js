@@ -17,10 +17,16 @@ module.exports = {
 			fontSize: [tailpress.fontSizeMapper(tailpress.theme("settings.typography.fontSizes", theme)), { "5.5xl": "3.25rem" }],
 			colors: {
 				// helpcompBase: "#222426",
-				helpcompBlack: "#17181A",
+				// helpcompBlack: "#17181A",
+				helpcompBlack: "#212529",
 				helpcompBlue: "#eff6fe",
-				helpcompGray: "#727980",
-				helpcompRed: "#e73031",
+				helpcompBlueDark: "#091c2a",
+				// helpcompGray: "#727980",
+				helpcompGray: "#6D7680",
+				helpcompGrayLight: "#98A5B3",
+				// helpcompRed: "#e73031",
+				helpcompRed: "#D92130",
+				helpcompRedDark: "#a61120",
 			},
 			gridTemplateColumns: {
 				// Simple 16 column grid

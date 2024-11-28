@@ -10,10 +10,10 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class('bg-white text-helpcompGray font-light antialiased flex flex-col min-h-screen antialiased'); ?>>
+<body <?php body_class('bg-white text-helpcompGray antialiased flex flex-col min-h-screen antialiased'); ?>>
 
 
-    <header class="bg-white fixed flex items-center h-28 max-lg:h-20 left-0 right-0 top-0 z-20 before:absolute before:inset-0 before:-z-[1] before:bg-white before:shadow-[0px_10px_20px_0_rgba(0,0,0,0.05)] before:opacity-0">
+    <header class="bg-white fixed flex items-center h-28 max-lg:h-20 left-0 right-0 top-0 z-20 before:absolute before:inset-0 before:-z-[1] before:bg-white before:shadow-[0px_10px_20px_0_rgba(0,0,0,0.05)] before:opacity-0 opacity-0">
 
         <div class="wrapper">
             <div class="flex items-center justify-between gap-6 4xl:w-[calc(100%+7rem)] 4xl:-ml-14">

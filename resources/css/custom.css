@@ -55,7 +55,7 @@
 
 .wrapper {
 	@apply w-full
-    max-w-[104rem]
+    max-w-[93rem]
     mx-auto
     px-4
     xxs:px-5
@@ -64,12 +64,12 @@
     md:px-8
     lg:px-12
     xl:px-14
-    2xl:px-16;
+    2xl:px-20;
 }
 
-header .wrapper {
+/* header .wrapper {
 	@apply max-w-[104rem];
-}
+} */
 
 [data-element="submenu-toggler"] {
 	@apply absolute
@@ -91,38 +91,148 @@ header .wrapper {
     xl:w-4;
 }
 
-.menu-image.menu-image-title-below {
-	@apply !p-0
-    rounded-md;
-}
-
-.menu-image-title-below.menu-image-title {
-	@apply block
-    /* group-hover:text-opticBlack */
-    /* group-hover:border-opticOrange */
-    transition-colors
-    duration-500
-    /* border-transparent border-b; */;
-}
-
 .swiper-slide:not(.swiper-slide-visible) {
 	@apply opacity-0
     pointer-events-none;
 }
-/* 
-.xx {
-	@apply w-full flex justify-center gap-y-1 flex-wrap items-center static top-full my-[3.5rem];
+
+form label {
+	@apply flex
+    flex-col
+    gap-y-1;
 }
 
-.xx li {
+form label p {
+	@apply m-0;
+}
+
+form label > span {
+	@apply first:text-helpcompGrayLight
+    first:text-sm
+    first:font-medium
+    first:uppercase;
+}
+
+form .wpcf7-list-item > label > span {
+	@apply static font-normal text-base text-helpcompGrayLight;
+}
+[type="text"],
+[type="email"],
+[type="tel"],
+select,
+textarea {
+	@apply w-full
+		bg-transparent
+		border-2 border-helpcompGrayLight/20
+		py-4 px-4
+		rounded-[4px]
+		text-white
+		text-base
+		font-normal
+		focus:outline-0
+		focus:border-helpcompGray
+		focus:ring-1
+		focus:ring-transparent
+		transition;
+}
+.wpcf7-list-item {
+	@apply m-0 flex;
+}
+.wpcf7-list-item label {
 	@apply flex;
 }
-
-.xxx {
-	@apply after:bg-opticGray--extralight after:rounded-md after:h-[0.3125rem] after:flex after:w-9 after:absolute after:top-1 after:left-0 after:transition after:duration-300
-    inline-block h-3 w-[32px] mx-2 relative hover:after:bg-opticOrange;
+.wpcf7-list-item [type="checkbox"] {
+	@apply shrink-0 mr-4;
+}
+.wpcf7-list-item label span {
+	@apply m-0;
+}
+[type="checkbox"] {
+	@apply h-6
+		w-6
+		bg-transparent
+    border-2
+		border-helpcompGrayLight/20
+		ring-0
+		ring-offset-0
+		rounded
+		/* focus:border-helpcompRed */
+		focus:!outline-0
+		focus:border-helpcompGrayLight/20
+		focus:ring-1
+    focus:ring-offset-0
+		focus:ring-transparent
+		transition;
+}
+[type="checkbox"]:checked {
+	@apply bg-transparent
+   border-helpcompGrayLight/20
+   focus:border-helpcompGray/20
+   hover:border-helpcompGray/20
+   focus:bg-transparent
+   hover:bg-transparent
+   focus:outline-0
+		/* focus:border-helpcompRed */
+		focus:ring-1
+		focus:ring-transparent
+    focus:ring-offset-0
+		/* ring-0; */;
 }
 
-.xxx.is-active {
-	@apply after:bg-opticOrange;
+.wpcf7-list-item label {
+	@apply flex-row;
+}
+
+.wpcf7-not-valid-tip {
+	@apply text-helpcompRed
+    !text-sm
+    !font-medium;
+}
+
+[type="submit"] {
+	@apply cursor-pointer
+		bg-helpcompRed text-white
+		border-transparent inline-flex items-center gap-6 px-8 sm:py-5 py-[1.125rem] font-bold text-center border-[3px] transition-all duration-500 hover:bg-helpcompBlack text-sm sm:text-base
+		relative;
+}
+[type="submit"]:disabled {
+	@apply opacity-50;
+}
+
+.wpcf7-spinner {
+	@apply bg-helpcompBlack absolute top-0 m-0 opacity-0 !visible pointer-events-none select-none transition-opacity duration-500 right-3 md:-right-6;
+}
+
+.wpcf7 form .wpcf7-response-output {
+	@apply mt-6 mb-0 mx-0 py-3 px-4 rounded;
+}
+
+.wpcf7 form.submitting .wpcf7-spinner {
+	@apply opacity-100;
+}
+
+/* [data-name="contact-acceptance"] span.wpcf7-list-item-label {
+	@apply;
 } */
+
+.acceptances-toggler {
+	@apply h-8
+	w-40
+	flex
+	items-center
+	ml-10
+	mt-4
+	text-sm
+	font-bold
+	text-helpcompRed
+	pl-8
+	bg-[left_center]
+	bg-no-repeat;
+	background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_3205_73907)'%3E%3Cpath d='M8.5 4L8.5 13M8.5 13L13 8.5M8.5 13L4 8.5' stroke='%23013210' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_3205_73907'%3E%3Crect width='16' height='16' fill='white' transform='translate(16) rotate(90)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+}
+
+.wpcf7-not-valid-tip {
+	@apply text-xs
+	font-bold
+	mt-2;
+}
