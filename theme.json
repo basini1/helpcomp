@@ -23,9 +23,9 @@
           "color": "#17181A"
         },
         {
-          "name": "Bardzo jasny niebieski",
-          "slug": "light-blue",
-          "color": "#eff6fe"
+          "name": "Bardzo jasny szary",
+          "slug": "light-gray",
+          "color": "#f5f5f5"
         }
       ]
     },
@@ -39,7 +39,7 @@
         {
           "slug": "regular",
           "name": "Regular",
-          "size": "1.5rem"
+          "size": "1rem"
         },
         {
           "slug": "large",

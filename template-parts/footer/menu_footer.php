@@ -7,8 +7,8 @@
                 'container'         => false,
                 'menu_class'        => 'grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-3 place-items-start',
                 'theme_location'    => 'footer_offer-menu',
-                'li_class'          => false,
-                'link_class'        => 'block text-helpcompBlack font-semibold transition-colors duration-300 hover:text-helpcompRed leading-relaxed',
+                'li_class'          => 'group',
+                'link_class'        => 'block text-helpcompBlack font-semibold transition-colors duration-300 hover:text-helpcompRed leading-relaxed group-[.current-menu-item]:text-helpcompRed',
                 'fallback_cb'       => false,
             )
         );
@@ -24,8 +24,8 @@
                     'container'         => false,
                     'menu_class'        => 'grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-3 place-items-start',
                     'theme_location'    => 'footer_insert-menu',
-                    'li_class'          => false,
-                    'link_class'        => 'block text-helpcompGray transition-colors duration-300 hover:text-helpcompBlack',
+                    'li_class'          => 'group',
+                    'link_class'        => 'block text-helpcompGray transition-colors duration-300 hover:text-helpcompBlack group-[.current-menu-item]:text-helpcompBlack ',
                     'fallback_cb'       => false,
                 )
             );

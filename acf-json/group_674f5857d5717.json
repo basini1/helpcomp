@@ -1,0 +1,88 @@
+{
+    "key": "group_674f5857d5717",
+    "title": "CTA: Masz pytania",
+    "fields": [
+        {
+            "key": "field_674f5857dc254",
+            "label": "Slogan",
+            "name": "footer_cta_contact_slogan",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Masz pytania lub chcesz podjąć współpracę?",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_674f5857dfd72",
+            "label": "Lead",
+            "name": "footer_cta_contact_lead",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Oferujemy pełne wsparcie IT – od serwisu po dostawę sprzętu fiskalnego i komputerowego. Nasi specjaliści pomogą znaleźć rozwiązania, które będą wspierać rozwój Twojej firmy.",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_674f5857e399b",
+            "label": "Tekst",
+            "name": "footer_cta_contact_text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Zapraszamy do kontaktu",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "opcje-strony"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1733253891
+}

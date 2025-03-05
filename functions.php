@@ -48,6 +48,7 @@ function wpb_add_google_fonts()
 {
     $theme = wp_get_theme();
     wp_enqueue_style('google-fonts-outfit', '//fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap', false, $theme->get('Version'), 'all');
+    wp_enqueue_style('google-fonts-bebas', '//fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"', false, $theme->get('Version'), 'all');
 }
 
 
@@ -139,20 +140,20 @@ class My_Menu_Walker extends Walker_Nav_Menu
         $output .= '
 		<div data-element="submenu" class="xl:bg-white top-full xl:absolute left-0 right-0 !overflow-x-clip submenu-active hidden">
 			<div class="wrapper max-w-none max-xl:px-0">
-				<div class="xl:py-12 xl:border-t border-[#e5e5e5]">
+				<div class="xl:py-12 xl:border-t border-neutral-100">
 					<div class="flex -mx-2">
-						<div class="?xl:w-11/12 2xl:w-5/6 w-full px-2 mx-auto">
+						<div class="w-full px-2 mx-auto 2xl:w-11/12">
 							<div class="flex flex-wrap -mx-2 relative z-[10]">';
         if ($depth === 0) {
             $output .= '<div class="xl:w-[30%] xl:block relative hidden w-full px-2">
 									<div class="flex h-full -mx-2">
-										<div class="border-r border-[#e5e5e5] w-3/4 px-2">
+										<div class="w-3/4 px-2 border-r border-neutral-100">
 											<h3 class="font-medium text-opticBlack lg:text-2xl">' . esc_html($this->current_parent_title) . '</h3>
 										</div>
 									</div>
 								</div>';
         }
-        $output .= '<div class="xl:w-[70%] w-full px-2 xl:mt-0 mt-1 mb-4 xl:mb-0 font-medium text-sm sm:text-base">';
+        $output .= '<div class="xl:w-[70%] w-full px-2 xl:mt-0 mt-1 mb-4 xl:mb-0 font-medium text-base">';
 
         parent::start_lvl($output, $depth, $args);
     }
@@ -180,7 +181,7 @@ class My_Menu_Walker extends Walker_Nav_Menu
     }
 }
 
-add_filter('nav_menu_css_class', 'cfw_add_data_atts_to_nav', 10, 4);
+// add_filter('nav_menu_css_class', 'cfw_add_data_atts_to_nav', 10, 4);
 function cfw_add_data_atts_to_nav($atts, $item, $args)
 {
     $atts['data-hover'] = $item->title;
@@ -193,7 +194,7 @@ function my_wp_nav_menu_objects($items, $args)
 {
     foreach ($items as &$item) {
         $icon = get_field('menu-item_icon', $item);
-        $depth = $item->menu_item_parent ? 2 : 1; // Sprawdza poziom zagnieżdżenia (1 dla głównego poziomu)
+        $depth = $item->menu_item_parent ? 2 : 1;
 
         if ($icon) {
             if ($depth === 1) {
@@ -262,6 +263,15 @@ function my_acf_block_registration()
             'category' => 'formatting',
             'icon' => 'admin-comments',
             'keywords' => array('liczby, doświadczenie'),
+        ));
+        acf_register_block_type(array(
+            'name' => 'block_button',
+            'title' => __('Guzik ze strzałką'),
+            'description' => __('Link wewnętrzny lub zewnętrzy w 3 wariantach kolorystycznych'),
+            'render_template' => 'template-parts/blocks/block_button.php',
+            'category' => 'formatting',
+            'icon' => 'admin-comments',
+            'keywords' => array('link, button'),
         ));
     }
 }

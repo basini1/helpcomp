@@ -2,9 +2,9 @@
 /* Template name: Insert - program */
 ?>
 
-<div class="opacity-0">
-    <?php get_header(); ?>
-</div>
+
+<?php get_header(); ?>
+
 
 <?php
 $image_id = get_field('insert_box'); // Pobierz ID obrazka z pola ACF
@@ -170,10 +170,11 @@ if (!empty($parent)) : ?>
 
     <?php
     $parent = $parent[0];
+    $parent_id = $parent->ID;
 
     $child_pages = new WP_Query([
         'post_type' => 'page',
-        'post_parent' => $parent->ID,
+        'post_parent' => $parent_id,
         'orderby' => 'date',
         'order' => 'ASC',
         'post__not_in'           => [get_the_ID()],
@@ -190,41 +191,55 @@ if (!empty($parent)) : ?>
                 <div class="relative z-[1] grid gap-x-4 gap-y-16 lg:grid-cols-12 before:bg-white before:absolute before:left-1/2 before:w-screen before:-translate-x-1/2 before:h-1/2 before:top-0 before:-z-[1] before:max-lg:h-full">
                     <div class="lg:col-span-5">
                         <div class="py-12 px-10 bg-[#a61120] rounded-xl flex flex-col gap-y-6 text-white min-h-full">
-                            <h3 class="mb-2 text-3xl font-semibold text-white lg:text-2xl xl:text-3xl">Sprawdź nasz sklep internetowy!</h3>
-                            <p>Oferujemy pełne wsparcie IT – od serwisu po dostawę sprzętu fiskalnego i komputerowego. Nasi specjaliści pomogą znaleźć rozwiązania, które będą wspierać rozwój Twojej firmy.</p>
+                            <?php if (get_field('insert-global_slogan', $parent_id)) : ?><h3 class="mb-2 text-3xl font-semibold text-white lg:text-2xl xl:text-3xl"><?php echo get_field('insert-global_slogan', $parent_id); ?></h3><?php endif; ?>
+                            <?php if (get_field('insert-global_url', $parent_id)) : ?>
+                                <p class="mt-4">
+                                    <a target="_blank" href="<?php echo esc_url(get_field('insert-global_url', $parent_id)); ?>" class="group inline-flex items-center border-white border-2 pl-9 pr-6 py-1.5 text-sm font-medium text-center text-white uppercase transition duration-500 rounded-full hover:bg-white hover:text-helpcompBlack hover:border-transparent">
+                                        Zobacz sklep
+                                        <svg class="relative h-auto max-w-full transition-transform duration-300 rotate-90 group-hover:translate-x-2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 40 40">
+                                            <defs>
+                                                <clipPath id="clip-path">
+                                                    <rect width="16" height="16" fill="none"></rect>
+                                                </clipPath>
+                                            </defs>
+                                            <g id="up" transform="translate(-975 -362)">
+                                                <g id="Component_50_1" data-name="Component 50 – 1" transform="translate(987 374)" clip-path="url(#clip-path)">
+                                                    <path id="Path_10" data-name="Path 10" d="M8,0,6.545,1.455l5.506,5.506H0V9.039H12.052L6.545,14.545,8,16l8-8Z" transform="translate(0 16) rotate(-90)" fill="currentColor"></path>
+                                                </g>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </p>
+                            <?php endif; ?>
                         </div>
                     </div>
-                    <div class="gap-4 lg:col-span-7">
-                        <div class="py-12 px-10 bg-[hsl(205,66,10)] rounded-xl flex flex-col gap-y-6  text-helpcompGrayLight min-h-full">
-                            <h3 class="mb-2 text-3xl font-semibold text-white lg:text-2xl xl:text-3xl">Dlaczego u Nas?</h3>
-                            <div class="grid gap-x-4 gap-y-6 md:grid-cols-4 xxs:grid-cols-2">
-                                <div class="col-span-1">
-                                    <div class="flex flex-col items-center gap-y-4">
-                                        <div class="flex items-center justify-center w-24 h-24 border-2 border-dashed rounded-full border-helpcompRed"></div>
-                                        <span class="block text-sm font-medium text-center">Wieloletni Partner Handlowy Insert</span>
-                                    </div>
-                                </div>
-                                <div class="col-span-1">
-                                    <div class="flex flex-col items-center gap-y-4">
-                                        <div class="flex items-center justify-center w-24 h-24 border-2 border-dashed rounded-full border-helpcompRed"></div>
-                                        <span class="block text-sm font-medium text-center">Nowe pakiety oraz roczne aktualizacje</span>
-                                    </div>
-                                </div>
-                                <div class="col-span-1">
-                                    <div class="flex flex-col items-center gap-y-4">
-                                        <div class="flex items-center justify-center w-24 h-24 border-2 border-dashed rounded-full border-helpcompRed"></div>
-                                        <span class="block text-sm font-medium text-center">Instalacja oraz wdrażenia w firmach </span>
-                                    </div>
-                                </div>
-                                <div class="col-span-1">
-                                    <div class="flex flex-col items-center gap-y-4">
-                                        <div class="flex items-center justify-center w-24 h-24 border-2 border-dashed rounded-full border-helpcompRed"></div>
-                                        <span class="block text-sm font-medium text-center">Posprzedażowa opieka serwisowa</span>
-                                    </div>
+                    <?php if (have_rows('insert-global_whyus', $parent_id)) : ?>
+                        <div class="gap-4 lg:col-span-7">
+                            <div class="py-12 px-10 bg-[hsl(205,66,10)] rounded-xl flex flex-col gap-y-6  text-helpcompGrayLight min-h-full">
+                                <h3 class="mb-2 text-3xl font-semibold text-white lg:text-2xl xl:text-3xl">Dlaczego u Nas?</h3>
+                                <div class="grid gap-x-4 gap-y-6 md:grid-cols-4 xxs:grid-cols-2">
+                                    <?php while (have_rows('insert-global_whyus', $parent_id)) : the_row(); ?>
+                                        <?php
+                                        $whyus_icon = get_sub_field('whyus_icon');
+                                        $whyus_lead = get_sub_field('whyus_lead');
+                                        ?>
+                                        <div class="col-span-1">
+                                            <div class="flex flex-col items-center gap-y-4">
+                                                <?php if ($whyus_icon) : ?>
+                                                    <div class="flex items-center justify-center w-[6.25rem] h-[6.25rem] bborder-2 bborder-dashed brounded-full bborder-helpcompRed">
+                                                        <?php
+                                                        echo wp_get_attachment_image($whyus_icon, 'full', false, ['alt' => '', 'class' => '']);
+                                                        ?>
+                                                    </div>
+                                                <?php endif; ?>
+                                                <?php if ($whyus_lead) : ?><span class="block text-sm font-medium text-center"><?php echo $whyus_lead; ?></span><?php endif; ?>
+                                            </div>
+                                        </div>
+                                    <?php endwhile; ?>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    <?php endif; ?>
                 </div>
 
                 <!-- <div align="center bg-helpcompBlue"><iframe id="insert_aktualna_promocja_rectangle" name="insert_aktualna_promocja_rectangle" src="https://bannery.insert.com.pl/aktualna_promocja_rectangle" width="300" height="250" frameborder="0" scrolling="no">insert_aktualna_promocja_rectangle</iframe></div> -->

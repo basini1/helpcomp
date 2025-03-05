@@ -60,7 +60,7 @@
     </div>
 
 </section>
-*/ ?>
+
 
 <section class="py-24 pb-32 -mt-24 bg-helpcompBlueDark">
 
@@ -137,6 +137,77 @@
             <?php endif; ?>
         </div>
         <p class="flex justify-center hidden mt-16">
+            <a
+                href="#"
+                class="group inline-flex items-center border-helpcompRed border-2 pl-9 pr-6 py-1.5 text-sm font-medium text-center text-white uppercase transition duration-500 rounded-full bg-helpcompRed hover:bg-white hover:text-helpcompBlack hover:border-white">
+                Skontaktuj się
+                <svg class="relative h-auto max-w-full transition-transform duration-300 rotate-90 group-hover:translate-x-2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 40 40">
+                    <defs>
+                        <clipPath id="clip-path">
+                            <rect width="16" height="16" fill="none"></rect>
+                        </clipPath>
+                    </defs>
+                    <g id="up" transform="translate(-975 -362)">
+                        <g id="Component_50_1" data-name="Component 50 – 1" transform="translate(987 374)" clip-path="url(#clip-path)">
+                            <path id="Path_10" data-name="Path 10" d="M8,0,6.545,1.455l5.506,5.506H0V9.039H12.052L6.545,14.545,8,16l8-8Z" transform="translate(0 16) rotate(-90)" fill="currentColor"></path>
+                        </g>
+                    </g>
+                </svg>
+            </a>
+        </p>
+    </div>
+
+</section>
+
+*/ ?>
+
+<?php if (have_rows("experience_col")) : ?>
+    <?php $count = count(get_field('experience_col')); ?>
+    <section class="<?php // echo !is_admin() ? '-mt-24' : null; 
+                    ?> pt-24 pb-0 bg-helpcompBlueDark border-bb-2 bborder-helpcompGray/20 border-dotted">
+        <div class="wrapper">
+            <h2 class="mb-20 text-5xl font-bold text-center text-white">Helpcomp w liczbach</h2>
+            <div class="grid gap-x-0 gap-y-12 sm:grid-cols-2 lg:grid-cols-<?php echo $count; ?> flex">
+                <?php while (have_rows("experience_col")) : the_row(); ?>
+                    <?php
+                    $number = get_sub_field("experience_number");
+                    $plus = get_sub_field("experience_plus");
+                    $slogan = get_sub_field("experience_slogan");
+                    ?>
+                    <?php if ($number) : ?>
+                        <div class="col-span-1 text-centerr pt-10 px-7 
+                        <?php if (get_row_index() == 1) {
+                            echo ' bg-sky-100/10';
+                        }
+                        ?>">
+                            <h4 class="flex flex-col gap-y-2"><span class="mb-2 text-6xl font-bold text-white xl:text-7xl"><?php echo $number; ?><?php if ($plus) : ?><span class="text-helpcompGray">+</span><?php endif; ?></span><?php if ($slogan) : ?><span class="block max-w-[80%] mx-autoo"><?php echo $slogan; ?></span><?php endif; ?></h4>
+                        </div>
+                    <?php endif; ?>
+                <?php endwhile; ?>
+            </div>
+        </div>
+    </section>
+<?php endif; ?>
+
+<section class="py-24 pt-0 pb-32 -mt-24 bg-helpcompBlueDark">
+
+    <div class="wrapper">
+        <!-- <h2 class="mb-16 text-4xl font-semibold text-center text-white lg:text-2xl xl:text-3xl 2xl:text-4xl">Masz pytania lub chcesz podjąć współpracę?</h2> -->
+        <div class="grid text-centerr lg:grid-cols-12 gap-x-4 sm:gap-x-6 lg:gap-x-8 xl:gap-x-0 gap-y-16 sm:grid-cols-2">
+            <div class="pt-8 pb-10 px-7 sm:col-span-1 lg:col-span-3 bg-sky-100/10">
+                <p>Firma Studio Usług Informatycznych „Helpcomp” s.c. działa nieprzerwanie od 1993 roku. Dzięki 30-letniemu doświadczeniu oferujemy sprawdzone i nowoczesne rozwiązania IT, które wspierają rozwój naszych klientów. Nasz zespół realizuje kompleksowe projekty, wdrażając zaawansowane technologie.</p>
+            </div>
+            <div class="pt-8 px-7 sm:col-span-1 lg:col-span-3">
+                <p>Specjalizujemy się w oferowaniu i utrzymaniu systemów sprzedaży opartych na PC-Market. Wdrożyliśmy już ponad 200 takich systemów w sklepach w całym kraju. Zapewniamy obsługę techniczną, szkolenia oraz wsparcie w rozbudowie funkcjonalności.</p>
+            </div>
+            <div class="pt-8 px-7 sm:col-span-1 lg:col-span-3">
+                <p>Od lat dostarczamy i fiskalizujemy urządzenia fiskalne dla firm z różnych branż. Zrealizowaliśmy już ponad 4000 fiskalizacji, dostosowując sprzęt do obowiązujących przepisów. Wspieramy klientów w konfiguracji, serwisie i integracji z systemami sprzedaży.</p>
+            </div>
+            <div class="pt-8 px-7 sm:col-span-1 lg:col-span-3">
+                <p>Jako przedstawiciel PWPW-Sigillum specjalizujemy się w sprzedaży i odnawianiu certyfikatów podpisu elektronicznego. Wystawiliśmy już ponad 15 tysięcy certyfikatów, pomagając firmom zarządzać dokumentacją. Zapewniamy pełne wsparcie techniczne i merytoryczne.</p>
+            </div>
+        </div>
+        <p class="flex justify-center mt-16">
             <a
                 href="#"
                 class="group inline-flex items-center border-helpcompRed border-2 pl-9 pr-6 py-1.5 text-sm font-medium text-center text-white uppercase transition duration-500 rounded-full bg-helpcompRed hover:bg-white hover:text-helpcompBlack hover:border-white">

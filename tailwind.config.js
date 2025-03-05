@@ -48,5 +48,8 @@ module.exports = {
 		},
 	},
 	plugins: [tailpress.tailwind, require("@tailwindcss/typography"), require("@tailwindcss/forms")],
-	safelist: ["w-4", "h-4", "xl:-left-3", "rotate-180", "max-xl:overflow-hidden", "max-xl:rotate-180"],
+	function({ addVariant }) {
+		addVariant("current_page_item", "&:current_page_item");
+	},
+	safelist: ["w-4", "h-4", "xl:-left-3", "rotate-180", "rotate-90", "max-xl:overflow-hidden", "max-xl:rotate-180"],
 };

@@ -3,7 +3,7 @@
 
     <section>
 
-        <div class="prose wrapper max-w-none">
+        <div class="prose max-w-none">
 
 
 
@@ -84,7 +84,7 @@
 
 
 
-        </div>
+            <!-- </div> -->
 
     </section>
 

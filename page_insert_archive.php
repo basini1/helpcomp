@@ -38,8 +38,15 @@ $child_pages = new WP_Query([
 
     <section>
         <div class="wrapper">
-            <div class="grid md:grid-cols-12 gap-y-12 gap-x-4">
-                <div class="col-span-5 col-start-8 prose">
+            <div class="grid items-center md:grid-cols-12 gap-y-12 gap-x-4">
+
+                <div class="col-span-6 md:order-last md:col-start-7">
+                    <div class="flex items-center justify-center">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/programy-insert.png');" alt="Programy InSERT">
+                    </div>
+                </div>
+
+                <div class="col-span-5 prose">
                     <?php the_content(); ?>
                 </div>
             </div>
@@ -88,30 +95,32 @@ $child_pages = new WP_Query([
 
 <?php endif; ?>
 
-<aside class="py-24 -mt-24 overflow-x-hidden bg-helpcompBlueDark text-helpcompGrayLight">
-    <div class="wrapper">
-        <div class="grid sm:grid-cols-11 3xl:w-[calc(100%+7rem)] 3xl:-ml-14">
-            <div class="relative grid sm:col-span-9 sm:col-start-2 lg:col-span-7 lg:col-start-3">
-                <div class="flex flex-col items-center col-span-5 text-center xl:px-10 2xl:px-20 gap-y-6">
-                    <h3 class="text-3xl font-bold text-white">Oprogramowanie firmy InsERT znajdziesz w naszym sklepie internetowym</h3>
-                    <p>Zapraszamy do naszego sklepu internetowego, gdzie znajdziesz rozwiązania firmy InsERT. Wybierz sprawdzone oprogramowanie, które usprawni Twoją pracę i zaspokoi potrzeby Twojej firmy!</p>
-                    <p class="mt-3 ">
-                        <a href="#" class="inline-flex items-center px-8 py-2 text-sm font-medium text-center text-white uppercase transition duration-300 rounded-full gap-x-1 bg-helpcompRed hover:bg-helpcompBlack">
-                            Przejdź do sklepu
-                            <svg class="h-auto max-w-full rotate-90" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 40 40">
-                                <defs>
-                                    <clipPath id="clip-path">
-                                        <rect width="16" height="16" fill="none"></rect>
-                                    </clipPath>
-                                </defs>
-                                <g id="up" transform="translate(-975 -362)">
-                                    <g id="Component_50_1" data-name="Component 50 – 1" transform="translate(987 374)" clip-path="url(#clip-path)">
-                                        <path id="Path_10" data-name="Path 10" d="M8,0,6.545,1.455l5.506,5.506H0V9.039H12.052L6.545,14.545,8,16l8-8Z" transform="translate(0 16) rotate(-90)" fill="currentColor"></path>
+<aside class="-mt-24 overflow-x-hidden bg-center bg-cover text-helpcompGrayLight" style="background-image: url('<?php echo esc_url(get_template_directory_uri()); ?>/assets/sklep-internetowy-helpcomp.jpg');">
+    <div class="py-24 bg-helpcompBlueDark/90">
+        <div class="wrapper">
+            <div class="grid sm:grid-cols-11 3xl:w-[calc(100%+7rem)] 3xl:-ml-14">
+                <div class="relative grid sm:col-span-9 sm:col-start-2 lg:col-span-7 lg:col-start-3">
+                    <div class="flex flex-col items-center col-span-5 text-center xl:px-10 2xl:px-20 gap-y-6">
+                        <h3 class="text-3xl font-bold text-white">Oprogramowanie firmy InsERT znajdziesz w naszym sklepie internetowym</h3>
+                        <p>Zapraszamy do naszego sklepu internetowego, gdzie znajdziesz rozwiązania firmy InsERT. Wybierz sprawdzone oprogramowanie, które usprawni Twoją pracę i zaspokoi potrzeby Twojej firmy!</p>
+                        <p class="mt-3 ">
+                            <a href="#" class="inline-flex items-center px-8 py-2 text-sm font-medium text-center text-white uppercase transition duration-300 rounded-full gap-x-1 bg-helpcompRed hover:bg-helpcompBlack">
+                                Przejdź do sklepu
+                                <svg class="h-auto max-w-full rotate-90" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 40 40">
+                                    <defs>
+                                        <clipPath id="clip-path">
+                                            <rect width="16" height="16" fill="none"></rect>
+                                        </clipPath>
+                                    </defs>
+                                    <g id="up" transform="translate(-975 -362)">
+                                        <g id="Component_50_1" data-name="Component 50 – 1" transform="translate(987 374)" clip-path="url(#clip-path)">
+                                            <path id="Path_10" data-name="Path 10" d="M8,0,6.545,1.455l5.506,5.506H0V9.039H12.052L6.545,14.545,8,16l8-8Z" transform="translate(0 16) rotate(-90)" fill="currentColor"></path>
+                                        </g>
                                     </g>
-                                </g>
-                            </svg>
-                        </a>
-                    </p>
+                                </svg>
+                            </a>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

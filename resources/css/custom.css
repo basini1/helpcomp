@@ -44,6 +44,14 @@
 	}
 }
 
+.offset-left > * {
+	@apply lg:pl-[16.666%];
+}
+
+.offset-right > * {
+	@apply lg:pr-[16.666%];
+}
+
 @keyframes gradient-smooth {
 	0% {
 		background-position: 0% 50%;
@@ -71,6 +79,10 @@
 	@apply max-w-[104rem];
 } */
 
+.menu-item-has-children {
+	@apply gap-x-3;
+}
+
 [data-element="submenu-toggler"] {
 	@apply absolute
     duration-300
@@ -84,11 +96,33 @@
     w-8
     will-change-transform
     xl:h-4
-    xl:-left-3
-    xl:relative
+    xl:left-auto
+    xl:static
+    xl:-ml-2
+    xl:mr-2
     xl:right-auto
     xl:top-auto
-    xl:w-4;
+    xl:w-4
+    3xl:-ml-5
+    3xl:mr-5;
+}
+
+[data-element="about-col"].col-active {
+	@apply text-white;
+}
+
+[data-element="about-col"].col-active [data-element="about-col-bg"] {
+	@apply opacity-100;
+}
+
+@media (min-width: 782px) {
+	.reverse-cols {
+		@apply flex-row-reverse;
+	}
+}
+
+.icon-wrapper-level-2 {
+	@apply rounded-md overflow-hidden;
 }
 
 .swiper-slide:not(.swiper-slide-visible) {
@@ -235,4 +269,31 @@ textarea {
 	@apply text-xs
 	font-bold
 	mt-2;
+}
+
+.zxc {
+	@apply after:absolute
+    after:bottom-0
+    after:-right-2
+    after:top-0
+    after:-z-[1]
+    after:w-[calc(42vw)]
+    after:bg-helpcompRedDark
+    text-white
+    after:max-lg:left-1/2
+    after:max-lg:w-[calc(100vw+2px)]
+    after:max-lg:right-auto
+    after:max-lg:-translate-x-1/2
+    after:bg-cover
+    after:bg-right
+    after:opacity-10;
+}
+.zxc:after {
+	background-image: url("../../assets/sklep-internetowy-helpcomp.jpg");
+}
+
+/* ---------------------------------- */
+
+.wrapper2 {
+	@apply w-full max-w-[1984px] 2xl:max-w-[1504px] 3xl:max-w-[1720px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-24 mx-auto;
 }

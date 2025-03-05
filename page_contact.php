@@ -1,65 +1,107 @@
 <?php
-/* Template name: Contact */
+/* Template name: Kontakt */
 get_header();
 ?>
+
 <section class="bg-fixed bg-center bg-cover text-helpcompGrayLight" style="background-image:url('<?php echo esc_url(get_template_directory_uri()); ?>/assets/helpcomp-sklep.jpg')">
     <div class="py-24 bg-helpcompBlueDark/[0.97]">
         <div class="wrapper">
-            <div class="grid gap-y-24 md:grid-cols-12">
-                <div class="flex flex-col col-span-5 gap-y-12">
-                    <h1 class="text-4xl font-bold text-white lg:text-3xl xl:text-4xl 2xl:text-5xl">Kontakt z nami</h1>
+            <div class="grid gap-y-24 gap-x-4 md:grid-cols-12">
+
+                <div data-aos="fade-in" data-aos-duration="800" class="flex flex-col col-span-5 gap-y-12">
+
+                    <?php echo get_field('contact_details_slogan') ? '<h1 data-aos="fade-in" data-aos-duration="800" data-aos-delay="200"  class="text-4xl font-bold text-white lg:text-3xl xl:text-4xl 2xl:text-5xl">' . get_field('contact_details_slogan') . '</h1>' : null; ?>
+
                     <div class="flex flex-col gap-y-6">
-                        <address class="not-italic max-w-96">
-                            <strong class="block mb-12 text-lg font-medium text-white">Studio Usług Informatycznych HELPCOMP&nbsp;s.c. Adam Wielki, Ryszard Wielki</strong> Jana Smolenia 18/24<br>41-902 Bytom, woj. śląskie
+
+                        <address data-aos="fade-in" data-aos-duration="800" data-aos-delay="300" class="not-italic max-w-96">
+                            <?php echo get_field('company_full-name', 'option') ? '<strong class="block mb-12 text-lg font-medium text-white">' . get_field('company_full-name', 'option') . '</strong>' : null; ?>
+                            <?php echo get_field('company_address', 'option') ? get_field('company_address', 'option') : null; ?>
                         </address>
-                        <p class="flex flex-col items-start gap-y-1">
-                            <a class="flex flex-wrap gap-x-3 group" href="tel:322803269">
-                                <span class="block w-5 text-helpcompRed">
-                                    <svg class="translate-y-0.5 relative" xmlns="http://www.w3.org/2000/svg" width="18.485" height="18.518" viewBox="0 0 18.485 18.518">
-                                        <path d="M12.583,4.237a4.047,4.047,0,0,1,3.2,3.2M12.583,1a7.284,7.284,0,0,1,6.434,6.426m-.809,6.459v2.428a1.619,1.619,0,0,1-1.764,1.619,16.017,16.017,0,0,1-6.985-2.485A15.782,15.782,0,0,1,4.6,10.591,16.017,16.017,0,0,1,2.118,3.574,1.619,1.619,0,0,1,3.729,1.809H6.157A1.619,1.619,0,0,1,7.776,3.2a10.392,10.392,0,0,0,.567,2.274,1.619,1.619,0,0,1-.364,1.708L6.95,8.211a12.95,12.95,0,0,0,4.856,4.856l1.028-1.028a1.619,1.619,0,0,1,1.708-.364,10.392,10.392,0,0,0,2.274.567,1.619,1.619,0,0,1,1.392,1.643Z" transform="translate(-1.361 -0.172)" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
-                                    </svg>
-                                </span>
-                                <span class="block text-white transition-colors duration-300 group-hover:text-helpcompRed">32 280 32 69</span>
-                            </a>
-                            <a class="flex flex-wrap gap-x-3 group" href="tel:323960914">
-                                <span class="block w-5 text-helpcompRed">
-                                    <svg class="translate-y-0.5 relative" xmlns="http://www.w3.org/2000/svg" width="18.485" height="18.518" viewBox="0 0 18.485 18.518">
-                                        <path d="M12.583,4.237a4.047,4.047,0,0,1,3.2,3.2M12.583,1a7.284,7.284,0,0,1,6.434,6.426m-.809,6.459v2.428a1.619,1.619,0,0,1-1.764,1.619,16.017,16.017,0,0,1-6.985-2.485A15.782,15.782,0,0,1,4.6,10.591,16.017,16.017,0,0,1,2.118,3.574,1.619,1.619,0,0,1,3.729,1.809H6.157A1.619,1.619,0,0,1,7.776,3.2a10.392,10.392,0,0,0,.567,2.274,1.619,1.619,0,0,1-.364,1.708L6.95,8.211a12.95,12.95,0,0,0,4.856,4.856l1.028-1.028a1.619,1.619,0,0,1,1.708-.364,10.392,10.392,0,0,0,2.274.567,1.619,1.619,0,0,1,1.392,1.643Z" transform="translate(-1.361 -0.172)" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
-                                    </svg>
-                                </span>
-                                <span class="block text-white transition-colors duration-300 group-hover:text-helpcompRed">32 396 09 14</span>
-                            </a>
-                        </p>
-                        <p>NIP: 6260015119</p>
-                        <p>Godziny otwarcia:</p>
-                        <p class="flex flex-wrap -mt-2 gap-x-3">
-                            <span class="block w-5">
-                                <svg class="translate-y-0.5 relative text-helpcompRed size-4" xmlns="http://www.w3.org/2000/svg" width="17.5" height="17.5" viewBox="0 0 17.5 17.5">
-                                    <g transform="translate(0.513 0.944)">
-                                        <circle id="Ellipse_3" data-name="Ellipse 3" cx="8" cy="8" r="8" transform="translate(0.237 -0.194)" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></circle>
-                                        <path id="Path_17" data-name="Path 17" d="M12,6v4.856l3.237,1.619" transform="translate(-3.907 -2.763)" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
-                                    </g>
-                                </svg>
-                            </span>
-                            <span class="block">Poniedziałek - Piątek: 08:00 - 17:00<br>Sobota: 09:00 - 13:00</span>
-                        </p>
-                        <hr class="my-12 border-t-2 border-dotted border-helpcompGrayLight/20" />
-                        <p class="flex -mt-2 gap-x-3">
-                            <span class="block w-5">
-                                <svg class="translate-y-0.5 relative text-helpcompRed size-6" xmlns=" http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
-                                </svg>
-                            </span>
-                            <span class="block">W przypadku problemów z parkowaniem przy ul. Smolenia zachęcamy do skorzystania z płatnych miejsc parkingowych na ulicach Piłsudskiego oraz Chrobrego, parkomaty znajdują się pod adresami: Chrobrego 6, Chrobrego 9, Piłsudskiego 51, Piłsudskiego 42, Piłsudskiego 45. Ponieważ nie ma konieczności umieszczania biletu parkingowego za szybą auta prosimy przynieść bilet do siedziby firmy a zwrócimy Państwu koszt parkowania (do jednej godziny).</span>
-                        </p>
+
+                        <div data-aos="fade-in" data-aos-duration="800" data-aos-delay="500">
+
+                            <?php if (have_rows('company_phones', 'option')) : ?>
+                                <p class="flex flex-col items-start gap-y-1">
+                                    <?php while (have_rows('company_phones', 'option')) : the_row(); ?>
+                                        <a class="flex flex-wrap items-center gap-x-3 group" href="tel:<?php echo str_replace(' ', '', get_sub_field('company_phone', 'option')); ?>">
+                                            <span class="flex items-center w-5 text-helpcompRed">
+                                                <svg class="relative" xmlns="http://www.w3.org/2000/svg" width="18.485" height="18.518" viewBox="0 0 18.485 18.518">
+                                                    <path d="M12.583,4.237a4.047,4.047,0,0,1,3.2,3.2M12.583,1a7.284,7.284,0,0,1,6.434,6.426m-.809,6.459v2.428a1.619,1.619,0,0,1-1.764,1.619,16.017,16.017,0,0,1-6.985-2.485A15.782,15.782,0,0,1,4.6,10.591,16.017,16.017,0,0,1,2.118,3.574,1.619,1.619,0,0,1,3.729,1.809H6.157A1.619,1.619,0,0,1,7.776,3.2a10.392,10.392,0,0,0,.567,2.274,1.619,1.619,0,0,1-.364,1.708L6.95,8.211a12.95,12.95,0,0,0,4.856,4.856l1.028-1.028a1.619,1.619,0,0,1,1.708-.364,10.392,10.392,0,0,0,2.274.567,1.619,1.619,0,0,1,1.392,1.643Z" transform="translate(-1.361 -0.172)" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" />
+                                                </svg>
+                                            </span>
+                                            <span class="block text-white transition-colors duration-300 group-hover:text-helpcompRed"><?php echo get_sub_field('company_phone', 'option'); ?></span>
+                                        </a>
+                                    <?php endwhile; ?>
+                                </p>
+                            <?php endif; ?>
+
+                            <?php echo get_field('company_nip', 'option') ? '<p>NIP: ' . get_field('company_nip', 'option') . '</p>' : null; ?>
+
+                            <?php if (have_rows('company_opening', 'option')) : ?>
+                                <p>Godziny otwarcia:</p>
+                                <p class="flex flex-wrap -mt-2 gap-x-3">
+                                    <span class="block w-5">
+                                        <svg class="relative translate-y-1 text-helpcompRed size-4" xmlns="http://www.w3.org/2000/svg" width="17.5" height="17.5" viewBox="0 0 17.5 17.5">
+                                            <g transform="translate(0.513 0.944)">
+                                                <circle id="Ellipse_3" data-name="Ellipse 3" cx="8" cy="8" r="8" transform="translate(0.237 -0.194)" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></circle>
+                                                <path id="Path_17" data-name="Path 17" d="M12,6v4.856l3.237,1.619" transform="translate(-3.907 -2.763)" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                                            </g>
+                                        </svg>
+                                    </span>
+                                    <span class="block">
+                                        <?php
+                                        $rowCount = count(get_field('company_opening', 'option'));
+                                        $i = 1;
+                                        ?>
+
+                                        <?php while (have_rows('company_opening', 'option')): the_row(); ?>
+                                            <?php
+                                            $open = get_sub_field('company_open', 'option');
+                                            echo $open;
+                                            if ($i < $rowCount): ?>
+                                                <br />
+                                            <?php endif; ?>
+                                            <?php $i++; ?>
+                                        <?php endwhile; ?>
+                                    </span>
+                                </p>
+                            <?php endif; ?>
+
+                        </div>
+
+                        <?php if (get_field('company_info', 'option')) : ?>
+                            <div data-aos="fade-in" data-aos-duration="500" data-aos-delay="700">
+                                <hr class="my-12 border-t-2 border-dotted border-helpcompGrayLight/20" />
+                                <div class="flex -mt-2 gap-x-3">
+                                    <span class="block w-5">
+                                        <svg class="relative translate-y-0 text-helpcompRed size-6" xmlns=" http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                                        </svg>
+                                    </span>
+                                    <div class="flex flex-col gap-y-5"><?php echo get_field('company_info', 'option'); ?></div>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+
                     </div>
+
                 </div>
-                <div class="flex flex-col col-span md:col-span-6 md:col-start-7 gap-y-12">
-                    <h2 class="text-4xl font-bold text-white lg:text-3xl xl:text-4xl 2xl:text-5xl">Wypełnij formularz</h2>
-                    <h3 class="max-w-sm text-lg text-helpcompGrayLight">Zachęcamy do skorzystania z formularza. Odpowiadamy w 24h*</h3>
-                    <?php echo do_shortcode('[contact-form-7 id="dd508b9" title="Formularz kontaktowy"]'); ?>
-                    <small class="block text-base text-helpcompGray">* w 24 godziny w dni robocze</small>
+
+                <div data-aos="fade-in" data-aos-duration="800" data-aos-delay="500" class="flex flex-col col-span md:col-span-6 md:col-start-7 gap-y-12">
+
+                    <?php echo get_field('contact_form_slogan') ? '<h2 class="text-4xl font-bold text-white lg:text-3xl xl:text-4xl 2xl:text-5xl">' . get_field('contact_form_slogan') . '</h2>' : null; ?>
+
+                    <?php echo get_field('contact_form_lead') ? '<h3 class="max-w-sm text-lg text-helpcompGrayLight">' . get_field('contact_form_lead') . '</h3>' : null; ?>
+
+                    <?php if (get_field('contact_form_shortcode')) : ?>
+                        <?php echo do_shortcode(get_field('contact_form_shortcode')); ?>
+                    <?php endif; ?>
+
+                    <?php echo get_field('contact_form_after') ? '<p><small class="block text-base text-helpcompGray">' . get_field('contact_form_after') . '</small></p>' : null; ?>
+
                 </div>
+
             </div>
         </div>
     </div>
@@ -67,12 +109,12 @@ get_header();
 
 <section>
     <div class="flex flex-col gap-y-16">
-        <div class="wrapper">
-            <h1 class="text-4xl font-bold text-center text-helpcompBlack lg:text-3xl xl:text-4xl 2xl:text-5xl">Znajdź nas na mapie</h1>
-        </div>
+
+        <?php echo get_field('contact_map_slogan') ? '<div class="wrapper"><h1 class="text-4xl font-bold text-center text-helpcompBlack lg:text-3xl xl:text-4xl 2xl:text-5xl">' . get_field('contact_map_slogan') . '</div></h1>' : null; ?>
+
         <div class="relative">
-            <div id="map" class="w-full h-[66vh]"></div>
-            <div class="absolute bottom-0 w-64 px-6 py-4 mb-8 -ml-32 bg-white shadow-lg xs:mb-12 sm:mb-12 rounded-xl left-1/2">
+            <div data-aos="fade-in" data-aos-duration="500" id="map" class="w-full h-[66vh]"></div>
+            <div data-aos="fade-in" data-aos-duration="500" data-aos-delay="300" class="absolute bottom-0 w-64 px-6 py-4 mb-8 -ml-32 bg-white shadow-lg xs:mb-12 sm:mb-12 rounded-xl left-1/2">
                 <div class="flex-col gap-y-6">
                     <h4 class="mb-1 text-sm font-semibold sm:text-base text-helpcompGray">Legenda</h4>
                     <div class="flex justify-between text-base gap-x-4 gap-y-2">
@@ -86,9 +128,9 @@ get_header();
                 </div>
             </div>
         </div>
+
     </div>
 </section>
-
 
 <aside class="hidden mb-24 overflow-x-hidden">
     <div class="wrapper">
@@ -120,18 +162,16 @@ get_header();
     </div>
 </aside>
 
-
-
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAubPYcCaQYlI8ZgbFY7lsmtEpSPRvvUhg" defer></script>
 <script>
     function initMap() {
-        // Ustawienia mapy na jasnoszary styl
+
         const mapOptions = {
             center: {
                 lat: 50.351097,
                 lng: 18.921321,
 
-            }, // Zmień na własne koordynaty
+            },
             zoom: 16,
             styles: [{
                     elementType: "geometry",
@@ -237,21 +277,18 @@ get_header();
             ],
         };
 
-        // Tworzenie mapy
         const map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
-        // Twój wybrany punkt z markerem 1.png
         const mainMarkerPosition = {
             lat: 50.351097,
             lng: 18.921321
-        }; // Podaj własne koordynaty
+        };
         new google.maps.Marker({
             position: mainMarkerPosition,
             map: map,
             icon: "<?php echo esc_url(get_template_directory_uri()); ?>/assets/map-marker.svg",
         });
 
-        // Trzy inne punkty z markerem 2.png
         const otherMarkers = [{
                 lat: 50.35044082404893,
                 lng: 18.922584346079272
@@ -283,7 +320,6 @@ get_header();
         });
     }
 
-    // Ładowanie mapy po załadowaniu strony
     window.onload = initMap;
 </script>
 
